@@ -1,0 +1,73 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.977,0.15">
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/idkv2.JPG" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" TextWrapping="Wrap" Text="Pizza R US" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="39" Width="780" FontFamily="Algerian" FontSize="22" Foreground="White">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+
+        <Button Content="Gå til betaling" HorizontalAlignment="Left" Margin="637,359,0,0" VerticalAlignment="Top" Height="51" Width="132" RenderTransformOrigin="1.981,0.898" Click="Button_Click"/>
+        <ListBox x:Name="lb_checkout" Height="NaN" Margin="607,79,31,93" Width="NaN">
+            <ListBox.Background>
+                <ImageBrush/>
+            </ListBox.Background>
+        </ListBox>
+        <ItemsControl ItemsSource="{Binding pizza}" Margin="10,79,563,163">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button HorizontalContentAlignment="Stretch">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding Navn}" />
+                            <TextBlock HorizontalAlignment="Right" Grid.Column="1" Text="{Binding Pris}" />
+                            <TextBlock Grid.Column="2" Text=" Kr." />
+                        </Grid>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ItemsControl ItemsSource="{Binding tilbehør}" Margin="314,79,349,170">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button HorizontalAlignment="Stretch">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock HorizontalAlignment="Left" TextAlignment="Left" Grid.Column="0"  Text="{Binding Navn}" />
+                            <TextBlock Grid.Column="1" Text="{Binding Pris}" HorizontalAlignment="Right"/>
+                            <TextBlock Grid.Column="2" Text=" Kr."/>
+                        </Grid>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock HorizontalAlignment="Left" Margin="314,49,0,0" TextWrapping="Wrap" Text="Tilbehør" VerticalAlignment="Top" FontFamily="Algerian" Width="84" FontSize="14" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" Text="Pizza" VerticalAlignment="Top" FontSize="14" FontFamily="Algerian" Foreground="White"/>
+
+    </Grid>
+</Window>
+
+    
