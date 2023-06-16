@@ -28,6 +28,7 @@ namespace WpfApp1
         {
             InitializeComponent();
 
+          
             dal = new DAL();
 
            
@@ -37,7 +38,13 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            CheckOut checkOut = new CheckOut();
+            checkOut.ShowDialog();
 
+            if (checkOut.DialogResult == true )
+            {
+                //Tøm chechkout listen
+            }
         }
     }
 

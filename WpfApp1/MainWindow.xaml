@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.977,0.15">
         <Grid.Background>
-            <ImageBrush ImageSource="/images/idkv2.JPG" Stretch="UniformToFill"/>
+            <ImageBrush  ImageSource="/images/idkv2.JPG" Stretch="UniformToFill"/>
         </Grid.Background>
         <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" TextWrapping="Wrap" Text="Pizza R US" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="39" Width="780" FontFamily="Algerian" FontSize="22" Foreground="White">
             <TextBlock.RenderTransform>
@@ -22,13 +22,13 @@
         </TextBlock>
 
 
-        <Button Content="Gå til betaling" HorizontalAlignment="Left" Margin="637,359,0,0" VerticalAlignment="Top" Height="51" Width="132" RenderTransformOrigin="1.981,0.898" Click="Button_Click"/>
-        <ListBox x:Name="lb_checkout" Height="NaN" Margin="607,79,31,93" Width="NaN">
+        <Button Content="Gå til betaling" HorizontalAlignment="Left" Margin="541,373,0,0" VerticalAlignment="Top" Height="51" Width="162" RenderTransformOrigin="1.981,0.898" Click="Button_Click"/>
+        <ListBox x:Name="lb_checkout" Height="NaN" Margin="541,102,97,70" Width="NaN">
             <ListBox.Background>
                 <ImageBrush/>
             </ListBox.Background>
         </ListBox>
-        <ItemsControl ItemsSource="{Binding pizza}" Margin="10,79,563,163">
+        <ItemsControl ItemsSource="{Binding pizza}" Margin="151,102,500,140">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Button HorizontalContentAlignment="Stretch">
@@ -46,7 +46,7 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <ItemsControl ItemsSource="{Binding tilbehør}" Margin="314,79,349,170">
+        <ItemsControl ItemsSource="{Binding tilbehør}" Margin="371,102,292,146">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Button HorizontalAlignment="Stretch">
@@ -64,8 +64,8 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <TextBlock HorizontalAlignment="Left" Margin="314,49,0,0" TextWrapping="Wrap" Text="Tilbehør" VerticalAlignment="Top" FontFamily="Algerian" Width="84" FontSize="14" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" Text="Pizza" VerticalAlignment="Top" FontSize="14" FontFamily="Algerian" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="371,79,0,0" TextWrapping="Wrap" Text="Tilbehør" VerticalAlignment="Top" FontFamily="Algerian" Width="84" FontSize="14" Foreground="White" RenderTransformOrigin="1.202,4.224"/>
+        <TextBlock HorizontalAlignment="Left" Margin="151,79,0,0" TextWrapping="Wrap" Text="Pizza" VerticalAlignment="Top" FontSize="14" FontFamily="Algerian" Foreground="White"/>
 
     </Grid>
 </Window>
