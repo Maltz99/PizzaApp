@@ -13,6 +13,8 @@ namespace WpfApp1
         public ObservableCollection<Pizza> pizza { get; set; } = new ObservableCollection<Pizza>();
         public ObservableCollection<Tilbehør> tilbehør { get; set; } = new ObservableCollection<Tilbehør>();
 
+        public ObservableCollection<CartItem> CheckOutList { get; set; } = new ObservableCollection<CartItem>();
+
         public ObservableCollection<Pizza> _pubPizza;
         public ObservableCollection<Toppings> _pubToppings;
         public ObservableCollection<Tilbehør> _pubTilbehør;
@@ -27,6 +29,9 @@ namespace WpfApp1
             pizza.Add(new Pizza { ID = 3, Navn = "Kebab Pizza", Pris = 75 });
             pizza.Add(new Pizza { ID = 4, Navn = "Hawaii Pizza", Pris = 75 });
             pizza.Add(new Pizza { ID = 5, Navn = "Salat Pizza", Pris = 75 });
+            pizza.Add(new Pizza { ID = 6, Navn = "Parmesan Pizza", Pris = 80 });
+            pizza.Add(new Pizza { ID = 7, Navn = "Calzone", Pris = 85 });
+            pizza.Add(new Pizza { ID = 8, Navn = "Husets Favorit", Pris = 90 });
 
             //Tilføjer toppings til list
             toppings.Add(new Toppings { ID = 1, Navn = "Ost", Pris = 10 });

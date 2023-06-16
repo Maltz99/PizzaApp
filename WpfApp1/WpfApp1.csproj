@@ -14,14 +14,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="images\idkv2.JPG">
+    <Resource Include="images\idkv2.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\idk.jpg" />
-    <Resource Include="images\pizza.jpg" />
+    <Resource Include="images\idk.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\pizza.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

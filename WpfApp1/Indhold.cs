@@ -11,7 +11,7 @@ namespace WpfApp1
     {
         public int ID { get; set; }
         private string _navn;
-        public double _pris;
+        public decimal _pris;
         public string Navn
         {
             get
@@ -25,7 +25,7 @@ namespace WpfApp1
             }
     }
 
-        public double Pris
+        public decimal Pris
         {
             get
             {
