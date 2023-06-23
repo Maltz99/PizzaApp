@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    class Tilbehør : Indhold
+    public class Tilbehør : Indhold
     {
     }
 }

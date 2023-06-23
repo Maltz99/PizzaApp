@@ -11,7 +11,7 @@
             <ImageBrush ImageSource="/images/pizza.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <ItemsControl ItemsSource="{Binding checkOutList}" Margin="284,111,322,131">
+        <ItemsControl ItemsSource="{Binding CheckOutList}" Margin="284,74,322,164">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Button HorizontalContentAlignment="Stretch">
@@ -31,6 +31,10 @@
         </ItemsControl>
         <Button x:Name="btn_fortryd" Content="Fortryd" HorizontalAlignment="Left" Margin="284,333,0,0" VerticalAlignment="Top" Height="45" Width="81" Click="btn_fortryd_Click"/>
         <Button x:Name="btn_betal" Content="Betal" HorizontalAlignment="Left" Margin="400,333,0,0" VerticalAlignment="Top" Height="45" Width="78" RenderTransformOrigin="0.186,0.604" Click="btn_betal_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="284,299,0,0" TextWrapping="Wrap" Text="Total: " VerticalAlignment="Top" FontFamily="Algerian" FontSize="14" Height="22" Width="66" Foreground="White" RenderTransformOrigin="0.767,0.382"/>
+        <TextBlock x:Name="prisTb" HorizontalAlignment="Left" Margin="400,299,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontFamily="Algerian" FontSize="14" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="439,299,0,0" TextWrapping="Wrap" Text="Kr." VerticalAlignment="Top" FontFamily="Algerian" FontSize="14" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="284,34,0,0" TextWrapping="Wrap" Text="Ordre" VerticalAlignment="Top" FontFamily="Algerian" FontSize="14" Foreground="white" Width="66"/>
 
     </Grid>
 </Window>

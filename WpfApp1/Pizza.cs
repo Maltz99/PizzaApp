@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    class Pizza : Indhold
+    public class Pizza : Indhold
     {
 
     }

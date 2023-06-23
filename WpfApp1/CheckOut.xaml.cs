@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +16,20 @@ using System.Windows.Shapes;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Interaction logic for CheckOut.xaml
-    /// </summary>
     public partial class CheckOut : Window
     {
-        public CheckOut()
+        public decimal total { get; set; }
+        public ObservableCollection<CartItem> CheckOutList { get; set; }
+
+
+        public CheckOut(decimal total, ObservableCollection<CartItem> CheckOutList)
         {
+            this.total = total;
+            this.CheckOutList = CheckOutList;
+            DataContext = this;
             InitializeComponent();
+
+            prisTb.Text = total.ToString();
         }
 
         private void btn_fortryd_Click(object sender, RoutedEventArgs e)

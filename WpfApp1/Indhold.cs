@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace WpfApp1
 {
-    internal class Indhold : INotifyPropertyChanged
+    public class Indhold : INotifyPropertyChanged
     {
         public int ID { get; set; }
         private string _navn;

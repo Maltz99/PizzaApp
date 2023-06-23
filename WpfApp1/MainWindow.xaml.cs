@@ -24,26 +24,29 @@ namespace WpfApp1
     /// 
     public partial class MainWindow : Window
     {
-        private DAL dal;
+        private readonly DAL dal;
+
+        private decimal total = 0;
         
-
-
-
         public MainWindow()
         {
             InitializeComponent();
 
-          
-            dal = new DAL();
-            dal.CheckOutList = new ObservableCollection<CartItem>();
-           
+
+            dal = new DAL
+            {
+                CheckOutList = new ObservableCollection<CartItem>()
+            };
+
             DataContext = dal;
+            Opdater_Total();
         }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CheckOut checkOut = new CheckOut();
+            CheckOut checkOut = new CheckOut(total, dal.CheckOutList);
+         
             checkOut.ShowDialog();
 
             if (checkOut.DialogResult == true )
@@ -52,37 +55,64 @@ namespace WpfApp1
                 dal.CheckOutList.Clear();
                 //Tøm chechkout listen
             }
+            Opdater_Total();
+        }
+
+        private void CustomizeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Customize custom = new Customize(total, dal.CheckOutList, dal.toppings, dal.pizza);
+            custom.ShowDialog();
         }
 
         private void Pizza_Click(object sender, RoutedEventArgs e)
         {
-            Button b = sender as Button;
+            Button? b = sender as Button;
             if (b != null)
             {
-                Pizza p = b.DataContext as Pizza;
-                Debug.WriteLine($"Du har valgt {p.Navn}");   
-               
+                Pizza? p = b.DataContext as Pizza;
+                if (p != null)
+                {
+                    CartItem cartItem = new CartItem(p);
+                    dal.CheckOutList.Add(cartItem);
+                }
             }
-
+            Opdater_Total();
         }
 
         private void Tilbehør_Click(Object sender, RoutedEventArgs e)
         {
-            Button b = sender as Button;
+            Button? b = sender as Button;
             if (b != null)
             {
-                Tilbehør t = b.DataContext as Tilbehør;
-                Debug.WriteLine($"Du har valgt {t.Navn}");
+                Tilbehør? t = b.DataContext as Tilbehør;
+                if (t != null)
+                {
+                    CartItem cartItem = new CartItem(t);
+                    dal.CheckOutList.Add(cartItem);
+                }
             }
+            Opdater_Total();
         }
 
         private void CheckOut_Click(object sender, RoutedEventArgs e)
         {
-            Button b = sender as Button;
+            Button? b = sender as Button;
             if (b != null)
             {
-
+                CartItem? c = b.DataContext as CartItem;
+                dal.CheckOutList.Remove(c);
             }
+            Opdater_Total();
+        }
+
+        private void Opdater_Total()
+        {
+            total = 0;
+            foreach (CartItem cartItem in dal.CheckOutList)
+            
+                total += cartItem.Pris;
+            
+            prisTb.Text = total.ToString();
         }
     }
 
